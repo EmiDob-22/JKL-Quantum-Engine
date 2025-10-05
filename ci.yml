@@ -1,0 +1,26 @@
+name: JKL Quantum Engine CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  rust-plugin-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Build Plugin
+        run: |
+          cd services/jkl_engine/plugins && cargo build
+      - name: Run Demo
+        run: |
+          cd services/jkl_engine/plugins && cargo run
+      - name: Show Dashboard
+        run: |
+          cat services/jkl_engine/plugins/causal_patch_history.log || echo "No causal patch history yet."

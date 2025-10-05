@@ -1,0 +1,14 @@
+{
+  "dimensions": [
+    "Code", "Test", "Manifest", "Documentation", "Security", "Resilience", "Monitoring", "Feedback",
+    "Causal", "ML_Model", "Data", "Deployment", "Performance", "Dependency", "Configuration"
+  ],
+  "status_summary": {
+    "Code": {"ok": 1, "fail": 0, "pending": 0, "total": 12},
+    "Security": {"ok": 0, "fail": 1, "pending": 0, "total": 12},
+    "Test": {"ok": 0, "fail": 0, "pending": 1, "total": 12},
+    "...": {}
+  },
+  "last_checked": "2025-10-05",
+  "notes": "Macierz coverage dynamicznie aktualizowana — każda inspekcja, patch, test, audit, compliance, docgen, resilience jest logowana i widoczna w dashboardzie. Statusy 'fail' wymagają natychmiastowej uwagi, 'pending' to zadania zaplanowane, 'ok' oznacza pełną zgodność."
+}

@@ -1,0 +1,12 @@
+# ... [pozostała specyfikacja]
+x-rateLimit:
+  requestsPerMinute: 100
+paths:
+  /inference:
+    post:
+      summary: Run model inference
+      description: |
+        Endpoint subject to rate limiting: max 100 RPS per user.
+      responses:
+        "429":
+          description: Too Many Requests (Rate limit exceeded)

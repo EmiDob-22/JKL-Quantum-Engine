@@ -1,0 +1,14 @@
+name: CD Production Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Kubernetes
+        run: |
+          # Add deployment script here, e.g. kubectl apply -f infrastructure/kubernetes/overlays/prod/
